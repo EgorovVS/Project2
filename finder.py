@@ -1,5 +1,3 @@
-
-
 import data_input
 import csv
 from encodings import utf_8
@@ -11,9 +9,10 @@ def search_for_name():
                 name = data_input.name_input().split()
                 for line in read_data:
                         if line[0:3] == name:
-                                pre_res = ' '.join(line)
+                                pre_res = line[3]
                                 result+= pre_res+'\n'
                 return result
+
 def card_for_name():
        result ='*'*10+'\n'
        with open('library.csv', encoding='utf_8') as lib:
@@ -28,6 +27,7 @@ def card_for_name():
                                         i+=1
                                 result+='*'*10+'\n'                               
                 return result
+
 def card_for_number():
        result ='*'*10+'\n'
        with open('library.csv', encoding='utf_8') as lib:
