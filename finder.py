@@ -8,9 +8,15 @@ def search_for_name():
                 read_data = csv.reader(lib, delimiter="|")
                 name = data_input.name_input().split()
                 for line in read_data:
-                        if line[0:3] == name:
-                                pre_res = line[3]
-                                result+= pre_res+'\n'
+                        if name == line[0:3]:
+                            pre_res = line[3]
+                            result+= pre_res+'\n'
+                        if name == line[0:2]:
+                            pre_res = str(line[0:])
+                            result += pre_res + '\n'
+                        if name == line[0:1]:
+                            pre_res = str(line[0:])
+                            result += pre_res + '\n'
                 return result
 
 def card_for_name():
@@ -21,13 +27,21 @@ def card_for_name():
                 for line in read_data:
                         i = 0
                         if line[0:3] == name:
+                            while i < len(line):
+                                pre = line[i]
+                                result += pre + '\n'
+                                i += 1
 
-                                while i < len(line):
-                                        pre = line[i]
-                                        result += pre+'\n'
-                                        i+=1
-                                result+='*'*10+'\n'
-                return result
+                        if name == line[0:2]:
+                            pre_res = str(line[0:])
+                            result += pre_res + '\n'
+
+                        if name == line[0:1]:
+                            pre_res = str(line[0:])
+                            result += pre_res + '\n'
+
+                result+='*'*10+'\n'
+       return result
 
 def card_for_number():
        result ='*'*10+'\n'
@@ -39,7 +53,6 @@ def card_for_number():
                         if line == []:
                                 continue
                         if line[3] == number[0]:
-
                                 while i < len(line):
                                         pre = line[i]
                                         result += pre+'\n'
