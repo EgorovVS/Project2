@@ -19,13 +19,14 @@ def card_for_name():
                 read_data = csv.reader(lib, delimiter="|")
                 name = data_input.name_input().split()
                 for line in read_data:
+                        i = 0
                         if line[0:3] == name:
-                                i = 0
-                                while i < 5:
+
+                                while i < len(line):
                                         pre = line[i]
                                         result += pre+'\n'
                                         i+=1
-                                result+='*'*10+'\n'                               
+                                result+='*'*10+'\n'
                 return result
 
 def card_for_number():
@@ -34,13 +35,14 @@ def card_for_number():
                 read_data = csv.reader(lib, delimiter="|")
                 number = data_input.number_input().split()
                 for line in read_data:
+                        i = 0
                         if line == []:
                                 continue
                         if line[3] == number[0]:
-                                i = 0
-                                while i < 5:
+
+                                while i < len(line):
                                         pre = line[i]
                                         result += pre+'\n'
                                         i+=1
-                                result+='*'*10+'\n'                                           
+                                result+='*'*10+'\n'
                 return result
