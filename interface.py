@@ -8,26 +8,18 @@ power_on = True
 while power_on:
     func_select = control.function_select()
     if func_select == 1:
-            get_data = control.get_card()
-            if get_data == 1:
+        while True:
+            search_select = control.search_select()
+            if search_select == 1:
                 name = finder.search_for_name()
-                print()
                 print(name)
-            if get_data == 2:
-                while True:
-                    search_select = control.search_select()
-                    if search_select == 1:
-                        name = finder.card_for_name()
-                        print(name)
-                        search_select = control.search_select()
-                    if search_select == 2:
-                        phone_number = finder.card_for_number()
-                        print(phone_number)
-                        search_select = control.search_select()
-                    if search_select == 3:
-                        break       
-            if get_data == 3:
-                func_select = control.function_select()          
+                search_select = control.search_select()
+            if search_select == 2:
+                phone_number = finder.search_for_number()
+                print(phone_number)
+                search_select = control.search_select()
+            if search_select == 3:
+                break
     if func_select == 2:
             while True:
                 print('Предупреждение! Будьте внимательны при работе в данном разделе! ')

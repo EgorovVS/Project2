@@ -2,7 +2,7 @@ import data_input
 
 def function_select():
     func_select = input('Выберите режим работы:\
- 1. Поиск абонента или номера телефона\
+ 1. Поиск абонента\
  2. Редактор справочника\
  3. Открыть справочник\
  4. Выход ')    
@@ -25,16 +25,16 @@ def search_select():
     return int(srch_select)
 
 
-def get_card():
-    get_data = input('Найти номер телефона или карточку абонента?\
-        1. Номер телефона\
-        2. Карточку абонента\
-        3. Назад ')
-    if not get_data.isdigit() and int(get_data)<1 or int(get_data)>3:
-        print('Вы ввели недопустимое значение, попробуйте снова ')
-        get_data = get_card()
-    print()
-    return int(get_data)
+# def get_card():
+#     get_data = input('Найти номер телефона или карточку абонента?\
+#         1. Номер телефона\
+#         2. Карточку абонента\
+#         3. Назад ')
+#     if not get_data.isdigit() and int(get_data)<1 or int(get_data)>3:
+#         print('Вы ввели недопустимое значение, попробуйте снова ')
+#         get_data = get_card()
+#     print()
+#     return int(get_data)
 
 
 def new_card():
